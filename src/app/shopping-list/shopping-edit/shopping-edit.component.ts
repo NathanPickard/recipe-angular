@@ -18,7 +18,6 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   editedItem: Ingredient;
   // @ViewChild('nameInput') nameInputRef: ElementRef;
   // @ViewChild('amountInput') amountInputRef: ElementRef;
-
   // @Output() ingredientAdded = new EventEmitter<Ingredient>();
 
   constructor(private slService: ShoppingListService) { }
@@ -51,5 +50,4 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
 }
