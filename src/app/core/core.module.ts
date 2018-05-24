@@ -26,4 +26,5 @@ import { DataStorageService } from "../shared/data-storage.service";
     ShoppingListService, RecipeService, DataStorageService, AuthService
   ]
 })
+
 export class CoreModule { }
