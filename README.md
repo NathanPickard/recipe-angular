@@ -1,6 +1,6 @@
 # RecipeApp
 
-The live app can be found [here] (http://recipe-book-nathan.s3-website-us-west-2.amazonaws.com)
+The live app can be found [here](http://recipe-book-nathan.s3-website-us-west-2.amazonaws.com)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
