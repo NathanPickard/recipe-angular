@@ -1,11 +1,13 @@
-import { EventEmitter, Injectable } from "@angular/core";
+// import { EventEmitter, Injectable } from "@angular/core";
 import { Subject } from "rxjs/Subject";
+// import { Store } from "@ngrx/store";
 
 import { Recipe } from "./recipe.model";
 import { Ingredient } from "../shared/ingredient.model";
-import { ShoppingListService } from "../shopping-list/shopping-list.service";
+// import { ShoppingListService } from "../shopping-list/shopping-list.service";
+// import * as ShoppingListActions from '../shopping-list/store/shopping-list.actions';
 
-@Injectable()
+// @Injectable()
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
   // recipeSelected = new EventEmitter<Recipe>();
@@ -15,7 +17,7 @@ export class RecipeService {
     new Recipe('Another Test Recipe', 'This is a test', 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Oreo-Two-Cookies.jpg/1200px-Oreo-Two-Cookies.jpg', [new Ingredient('Buns', 2), new Ingredient('Meat', 1)])
   ];
 
-  constructor(private slService: ShoppingListService) { }
+  constructor() { }
 
   setRecipes(recipes: Recipe[]) {
     this.recipes = recipes;
@@ -30,9 +32,10 @@ export class RecipeService {
     return this.recipes[index];
   }
 
-  addIngredientsToShoppingList(ingredients: Ingredient[]) {
-    this.slService.addIngredients(ingredients);
-  }
+  // addIngredientsToShoppingList(ingredients: Ingredient[]) {
+  //   this.slService.addIngredients(ingredients);
+  //   this.store.dispatch(new ShoppingListActions.AddIngredients(ingredients));
+  // }
 
   addRecipe(recipe: Recipe) {
     this.recipes.push(recipe);
