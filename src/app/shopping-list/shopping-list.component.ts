@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 // import { Subscription } from 'rxjs/Subscription';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import { Ingredient } from '../shared/ingredient.model';
 // import { ShoppingListService } from './shopping-list.service';

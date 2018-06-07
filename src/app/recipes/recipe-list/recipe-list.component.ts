@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/cor
 import { Router, ActivatedRoute } from '@angular/router';
 // import { Subscription } from 'rxjs/Subscription';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 // import { Recipe } from '../recipe.model';
 // import { RecipeService } from '../recipe.service';
