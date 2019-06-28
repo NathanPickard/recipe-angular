@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Effect, Actions } from '@ngrx/effects';
+import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Router } from '@angular/router';
 import { map, tap, switchMap, mergeMap } from 'rxjs/operators';
 import { from } from 'rxjs';
@@ -12,10 +12,10 @@ export class AuthEffects {
 
   @Effect()
   authSignup = this.actions$
-    .ofType(AuthActions.TRY_SIGNUP)
-    .pipe(map((action: AuthActions.TrySignup) => {
-      return action.payload;
-    }),
+    .pipe(ofType(AuthActions.TRY_SIGNUP),
+      (map((action: AuthActions.TrySignup) => {
+        return action.payload;
+      })),
       switchMap((authData: { username: string, password: string }) => {
         return from(firebase.auth().createUserWithEmailAndPassword(authData.username, authData.password));
       }),
@@ -36,10 +36,10 @@ export class AuthEffects {
 
   @Effect()
   authSignin = this.actions$
-    .ofType(AuthActions.TRY_SIGNIN)
-    .pipe(map((action: AuthActions.TrySignin) => {
-      return action.payload;
-    }),
+    .pipe(ofType(AuthActions.TRY_SIGNIN),
+      (map((action: AuthActions.TrySignin) => {
+        return action.payload;
+      })),
       switchMap((authData: { username: string, password: string }) => {
         return from(firebase.auth().signInWithEmailAndPassword(authData.username, authData.password));
       }),
@@ -61,10 +61,11 @@ export class AuthEffects {
 
   @Effect({ dispatch: false })
   authLogout = this.actions$
-    .ofType(AuthActions.LOGOUT)
-    .pipe(tap(() => {
-      this.router.navigate(['/']);
-    }));
+    .pipe(ofType(AuthActions.LOGOUT),
+      (tap(() => {
+        this.router.navigate(['/']);
+      }))
+    );
 
   constructor(private actions$: Actions, private router: Router) { }
 }
