@@ -40,8 +40,8 @@ export class HeaderComponent implements OnInit {
   }
 
   onFetchData() {
-    // this.dataStorageService.getRecipes();
-    this.store.dispatch(new RecipeActions.FetchRecipes());
+    this.dataStorageService.fetchRecipes().subscribe();
+    // this.store.dispatch(new RecipeActions.FetchRecipes());
   }
 
   onLogout() {
