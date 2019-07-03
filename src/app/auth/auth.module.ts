@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
+import { SharedModule } from '../shared/shared.module';
 
 import { AuthComponent } from "./auth.component";
 import { SigninComponent } from "./signin/signin.component";
@@ -18,7 +19,8 @@ import { LoadingSpinnerComponent } from "../shared/loading-spinner/loading-spinn
   imports: [
     CommonModule,
     FormsModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    SharedModule
   ]
 })
 export class AuthModule { }
