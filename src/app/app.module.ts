@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { StoreModule } from '@ngrx/store';
+// import { StoreModule } from '@ngrx/store';
+
+// import { AlertComponent } from './shared/alert/alert.component';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,7 +22,7 @@ import { AuthEffects } from './auth/store/auth.effects';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: "my-app"}),
@@ -30,12 +32,15 @@ import { AuthEffects } from './auth/store/auth.effects';
     ShoppingListModule,
     AuthModule,
     CoreModule,
-    StoreModule.forRoot(reducers),
+    // StoreModule.forRoot(reducers),
     EffectsModule.forRoot([AuthEffects]),
     // StoreRouterConnectingModule,
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // entryComponents: [
+  //   AlertComponent
+  // ]
 })
 
 export class AppModule { }
