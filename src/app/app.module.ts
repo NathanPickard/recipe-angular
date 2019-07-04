@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-// import { StoreModule } from '@ngrx/store';
+import { StoreModule } from '@ngrx/store';
 
 // import { AlertComponent } from './shared/alert/alert.component';
 
@@ -32,7 +32,7 @@ import { AuthEffects } from './auth/store/auth.effects';
     ShoppingListModule,
     AuthModule,
     CoreModule,
-    // StoreModule.forRoot(reducers),
+    StoreModule.forRoot(reducers),
     EffectsModule.forRoot([AuthEffects]),
     // StoreRouterConnectingModule,
     !environment.production ? StoreDevtoolsModule.instrument() : []
