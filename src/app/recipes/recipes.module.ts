@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from "@angular/forms";
 // import { StoreModule } from "@ngrx/store";
 // import { EffectsModule } from "@ngrx/effects";
@@ -25,20 +25,12 @@ import { SharedModule } from "../shared/shared.module";
     RecipeItemComponent
   ],
   imports: [
-    CommonModule,
+    RouterModule,
     ReactiveFormsModule,
     RecipesRoutingModule,
     SharedModule,
     // StoreModule.forFeature('recipes', recipeReducer),
     // EffectsModule.forFeature([RecipeEffects])
-  ],
-  exports: [
-    RecipesComponent,
-    RecipeStartComponent,
-    RecipeListComponent,
-    RecipeEditComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent
   ]
 })
 

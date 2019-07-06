@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import * as firebase from 'firebase';
 
 import { AuthService } from './auth/auth.service';
+import { LoggingService } from './logging.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import { AuthService } from './auth/auth.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+    private loggingService: LoggingService) { }
   // loadedFeature = 'recipe';
 
   ngOnInit() {
@@ -19,6 +21,7 @@ export class AppComponent implements OnInit {
     //   authDomain: "ng-recipe-book-1346d.firebaseapp.com"
     // });
     this.authService.autoLogin();
+    this.loggingService.printLog('Hello from AppComponent ngOnInit');
   }
 
   // onNavigate(feature: string) {

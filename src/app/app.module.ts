@@ -1,25 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { StoreModule } from '@ngrx/store';
-
-// import { AlertComponent } from './shared/alert/alert.component';
+import { HttpClientModule } from '@angular/common/http';
+// import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
-import { RecipesModule } from './recipes/recipes.module';
-import { ShoppingListModule } from './shopping-list/shopping-list.module';
-import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
+import { LoggingService } from './logging.service';
+// import { RecipesModule } from './recipes/recipes.module';
+// import { ShoppingListModule } from './shopping-list/shopping-list.module';
+// import { AuthModule } from './auth/auth.module';
 // import { shoppingListReducer } from './shopping-list/store/shopping-list.reducers';
-import { reducers } from './store/app.reducers';
-import { EffectsModule } from '@ngrx/effects';
+// import { reducers } from './store/app.reducers';
+// import { EffectsModule } from '@ngrx/effects';
 // import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
+// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+// import { environment } from '../environments/environment';
 
-import { AuthEffects } from './auth/store/auth.effects';
+// import { AuthEffects } from './auth/store/auth.effects';
 
 @NgModule({
   declarations: [
@@ -30,19 +29,17 @@ import { AuthEffects } from './auth/store/auth.effects';
     HttpClientModule,
     AppRoutingModule,
     SharedModule,
-    ShoppingListModule,
-    RecipesModule,
-    AuthModule,
     CoreModule,
-    StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([AuthEffects]),
+    // RecipesModule,
+    // ShoppingListModule,
+    // AuthModule,
+    // StoreModule.forRoot(reducers),
+    // EffectsModule.forRoot([AuthEffects]),
     // StoreRouterConnectingModule,
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    // !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   bootstrap: [AppComponent],
-  // entryComponents: [
-  //   AlertComponent
-  // ]
+  // providers: [LoggingService]
 })
 
 export class AppModule { }
