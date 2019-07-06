@@ -18,6 +18,7 @@ import { AuthService } from '../../auth/auth.service';
 export class HeaderComponent implements OnInit, OnDestroy {
   isAuthenticated = false;
   private userSub: Subscription;
+  collapsed = true;
   /* authState: Observable<fromAuth.State> */
   // @Output() featureSelected = new EventEmitter<string>();
 
